@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { META } from '../data/meta';
+---
+<Layout route="about" title={META['about'].title} description={META['about'].description}>
+<div class="page-head">
+  <div class="wrap">
+    <h1 tabindex="-1">About us</h1>
+    <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <p class="lede">An Italian cake shop in Carnes Hill, South West Sydney.</p>
+  </div>
+</div>
+<section class="band on-white">
+  <div class="wrap about-grid about-grid--top">
+    <div class="about-copy">
+      <h2>Thirty-five years in the world of Italian cakes</h2>
+      <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <p class="lede">Pasticceria Dolce Vita is an Italian cake shop at Carnes Hill Marketplace, specialising in continental and gelato cakes.</p>
+      <p>Everything we make draws on 35 years&rsquo; experience in Italian cakes. That means sponge soaked the proper way, custard and ricotta fillings, and cannoli shells with real crunch.</p>
+      <p>We make cakes to order for all occasions, from birthdays and family celebrations to Father&rsquo;s Day and Christmas. Our cabinet is also full of small cakes, Italian pastries, pies and sausage rolls for when you just want something good today.</p>
+      <p>We&rsquo;re based in South West Sydney and can deliver all around NSW.</p>
+      <ul class="specialties">
+        <li>Continental cakes</li>
+        <li>Gelato cakes</li>
+        <li>Cakes to order</li>
+        <li>Cannoli</li>
+        <li>Italian pastries</li>
+        <li>Pies and sausage rolls</li>
+      </ul>
+    </div>
+    <div class="about-photos">
+      <figure class="about-photo">
+        <img src="/images/storefront.jpg" alt="The Dolce Vita shopfront at Carnes Hill Marketplace, with glass cabinets full of cakes and pastries" width="739" height="415" loading="lazy">
+      </figure>
+      <div class="duo">
+        <img src="/images/cakes.jpg" alt="Three cakes topped with cream, biscuits, chocolate and strawberries, each with a Dolce Vita label" width="399" height="501" loading="lazy">
+        <img src="/images/cabinet.jpg" alt="The cake cabinet filled with cannoli, pastries and whole cakes" width="450" height="450" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta on-mist">
+  <div class="wrap cta-row">
+    <div>
+      <h2>Planning a celebration?</h2>
+      <p>Tell us what you have in mind and we&rsquo;ll confirm the details and price.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-black" href="/order">Order a cake</a>
+      <a class="btn btn-outline" href="tel:+61478774466">Call 0478 774 466</a>
+    </div>
+  </div>
+</section>
+</Layout>

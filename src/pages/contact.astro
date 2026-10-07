@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { META } from '../data/meta';
+---
+<Layout route="contact" title={META['contact'].title} description={META['contact'].description}>
+<div class="page-head">
+  <div class="wrap">
+    <h1 tabindex="-1">Contact us</h1>
+    <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <p class="lede">Visit us at Carnes Hill Marketplace, give us a call, or send an order request.</p>
+  </div>
+</div>
+<section class="band on-white">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h3>Visit us</h3>
+        <address>
+          Pasticceria Dolce Vita<br>
+          Carnes Hill Marketplace<br>
+          Cnr Cowpasture Rd &amp; Kurrajong Rd<br>
+          Carnes Hill NSW 2171
+        </address>
+        <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Pasticceria+Dolce+Vita+Carnes+Hill+Marketplace" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div>
+        <h3>Call us</h3>
+        <a class="phone" href="tel:+61478774466">0478 774 466</a>
+        <h3 style="margin-top:34px">Opening hours</h3>
+        <p class="placeholder">[Opening hours to be added]</p>
+      </div>
+      <div>
+        <h3>Follow us</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/DolceVita.Carneshill/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/dolcevita.carneshill/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="areas"><strong>Cake delivery across South West Sydney and NSW.</strong> We deliver to Carnes Hill, Hoxton Park, Horningsea Park, Prestons, Edmondson Park, West Hoxton, Middleton Grange, Austral, Leppington, Casula, Liverpool, Green Valley, Cecil Hills, Gregory Hills, Oran Park, Narellan, Camden and Campbelltown, and can deliver all around New South Wales.</p>
+  </div>
+</section>
+<section class="cta on-mist">
+  <div class="wrap cta-row">
+    <div>
+      <h2>Planning a celebration?</h2>
+      <p>Tell us what you have in mind and we&rsquo;ll confirm the details and price.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-black" href="/order">Order a cake</a>
+      <a class="btn btn-outline" href="tel:+61478774466">Call 0478 774 466</a>
+    </div>
+  </div>
+</section>
+</Layout>

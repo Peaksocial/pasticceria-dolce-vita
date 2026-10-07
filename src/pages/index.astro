@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { META } from '../data/meta';
+---
+<Layout route="home" title={META['home'].title} description={META['home'].description}
+  ogDescription="Continental and gelato cakes, cannoli and custom cakes to order. Pickup at Carnes Hill Marketplace or delivery across NSW.">
+<section class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <!-- Photo reel: stands in for the video banner until a video file is added (see HERO_VIDEO_SRC in the script) -->
+    <div class="reel"><div class="reel-track"><span style="background-image:var(--reel-1)"></span><span style="background-image:var(--reel-2)"></span><span style="background-image:var(--reel-3)"></span><span style="background-image:var(--reel-4)"></span><span style="background-image:var(--reel-1)"></span><span style="background-image:var(--reel-2)"></span><span style="background-image:var(--reel-3)"></span><span style="background-image:var(--reel-4)"></span><span style="background-image:var(--reel-1)"></span><span style="background-image:var(--reel-2)"></span><span style="background-image:var(--reel-3)"></span><span style="background-image:var(--reel-4)"></span></div></div>
+    <video class="hero-video" muted loop playsinline preload="metadata" hidden></video>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-copy">
+    <h1 tabindex="-1">Italian cakes for every occasion in South West Sydney</h1>
+    <p>Continental cakes, gelato cakes, cannoli and pastries, backed by 35 years&rsquo; experience in the world of Italian cakes. Order ahead for pickup at Carnes Hill Marketplace or delivery across NSW.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="/order">Order a cake</a>
+      <a class="btn btn-line" href="tel:+61478774466">Call 0478 774 466</a>
+    </div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <ul>
+      <li><strong>35 years&rsquo; experience</strong>in the world of Italian cakes</li>
+      <li><strong>Continental and gelato cakes</strong>made to order for all occasions</li>
+      <li><strong>Pickup or delivery</strong>from Carnes Hill to anywhere in NSW</li>
+    </ul>
+  </div>
+</div>
+
+
+<section class="band on-white">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <h2>Thirty-five years in the world of Italian cakes</h2>
+      <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <p class="lede">Pasticceria Dolce Vita is an Italian cake shop at Carnes Hill Marketplace, specialising in continental and gelato cakes.</p>
+      <p>We make cakes to order for all occasions, and our cabinet is full of cannoli, Italian pastries, small cakes, pies and sausage rolls.</p>
+      <div class="actions">
+        <a class="btn btn-black" href="/about">About us</a>
+        <a class="btn btn-outline" href="/our-range">See our range</a>
+      </div>
+    </div>
+    <figure class="about-photo">
+      <img src="/images/storefront.jpg" alt="The Dolce Vita shopfront at Carnes Hill Marketplace, with glass cabinets full of cakes and pastries" width="739" height="415" loading="lazy">
+      <figcaption>Our shop at Carnes Hill Marketplace.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band on-mist">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From the cabinet</h2>
+      <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="/images/cannoli.jpg" alt="A box of ten cannoli with different fillings" width="900" height="1019" loading="lazy">
+        <figcaption>A mixed box of cannoli</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/cakes.jpg" alt="Three cakes topped with cream, biscuits, chocolate and strawberries, each with a Dolce Vita label" width="399" height="501" loading="lazy">
+        <figcaption>Cakes for every occasion</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/cabinet.jpg" alt="The cake cabinet filled with cannoli, pastries and whole cakes" width="450" height="450" loading="lazy">
+        <figcaption>The cabinet at Carnes Hill</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/fathers-day-cake.jpg" alt="A white Father's Day cake decorated with a tuxedo, bow tie and a Happy Father's Day topper" width="335" height="597" loading="lazy">
+        <figcaption>A Father&rsquo;s Day cake made to order</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/lemon-caprese.jpg" alt="Lemon caprese cakes dusted with icing sugar in the display cabinet" width="399" height="501" loading="lazy">
+        <figcaption>Lemon caprese</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band on-black" aria-labelledby="reviews-h">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="reviews-h">What our customers say</h2>
+      <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </div>
+    <figure>
+      <blockquote class="lead-review">&ldquo;Hands down the best cannoli I&rsquo;ve ever had in my entire life.&rdquo;</blockquote>
+      <figcaption class="who"><b>Hannah P.</b> on Google</figcaption>
+    </figure>
+    <ul class="reviews">
+      <li>
+        <blockquote>&ldquo;We have been coming here for years for all our go to birthday cakes, events and all special occasions. Their cakes, desserts are absolutely scrumptious and their bakery goods including sausage rolls, meat pies and pasticcis are absolutely delicious, so buttery and always fresh!&rdquo;</blockquote>
+        <p class="who"><b>Bela P.</b> on Google</p>
+      </li>
+      <li>
+        <blockquote>&ldquo;The cakes are always beautifully made, fresh, and absolutely delicious &ndash; not only do they look amazing, but they taste just as good. Every time I order, the quality and attention to detail is consistent.&rdquo;</blockquote>
+        <p class="who"><b>Sal C.</b> on Google</p>
+      </li>
+      <li>
+        <blockquote>&ldquo;The cakes here are nothing short of perfection &mdash; rich, fresh, and full of flavor. You can truly taste the love and quality in every bite.&rdquo;</blockquote>
+        <p class="who"><b>Sandra J.</b> on Google</p>
+      </li>
+      <li>
+        <blockquote>&ldquo;&hellip;we recently went back and ordered a custom birthday cake for our 1 year old. The cake not only looked beautiful but tasted amazing.&rdquo;</blockquote>
+        <p class="who"><b>Nacha H.</b> on Google</p>
+      </li>
+      <li>
+        <blockquote>&ldquo;The puff pastry profiterole cake filled with biscoff custard was delicious&hellip; The custard is rich, but the pastry and sponge balances well so it&rsquo;s not heavy throughout.&rdquo;</blockquote>
+        <p class="who"><b>Johnny</b> on Google</p>
+      </li>
+      <li>
+        <blockquote>&ldquo;Very happy with our cake, so delicious and customer service so good. Keep up with your amazing job.&rdquo;</blockquote>
+        <p class="who"><b>Edna B.</b> on Google</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="cta on-mist">
+  <div class="wrap cta-row">
+    <div>
+      <h2>Planning a celebration?</h2>
+      <p>Tell us what you have in mind and we&rsquo;ll confirm the details and price.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-black" href="/order">Order a cake</a>
+      <a class="btn btn-outline" href="tel:+61478774466">Call 0478 774 466</a>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/hero.ts"></script>
+</Layout>

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { META } from '../data/meta';
+import { range } from '../data/range';
+---
+<Layout route="our-range" title={META['our-range'].title} description={META['our-range'].description}>
+<div class="page-head">
+  <div class="wrap">
+    <h1 tabindex="-1">Our range</h1>
+    <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <p class="lede">Italian cakes, cannoli, pastries and pies from our cabinet at Carnes Hill Marketplace.</p>
+  </div>
+</div>
+<section class="band on-white range">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Our range" hidden>
+      {range.map((cat, i) => (
+        <button class="tab" role="tab" type="button" id={`tab-${cat.id}`} aria-controls={`panel-${cat.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? undefined : '-1'}>{cat.title}</button>
+      ))}
+    </div>
+
+    {range.map((cat) => (
+      <div class="panel" id={`panel-${cat.id}`} role="tabpanel" aria-labelledby={`tab-${cat.id}`} tabindex="0">
+        <h2 class="panel-title">{cat.title}</h2>
+        {cat.intro && <p class="panel-intro">{cat.intro}</p>}
+        {cat.photo && (
+          <figure class="panel-photo">
+            <img src={cat.photo.src} alt={cat.photo.alt} width={cat.photo.width} height={cat.photo.height} loading="lazy">
+          </figure>
+        )}
+        <ul class="items">
+          {cat.items.map((item) => (
+            <li>
+              {item.image
+                ? <div class="ph"><img src={item.image} alt="" loading="lazy"></div>
+                : <div class="ph ph--empty" aria-hidden="true"></div>}
+              <div class="item-head"><h3>{item.name}</h3></div>
+              {item.description && <p>{item.description}</p>}
+              {item.containsNuts && <span class="tag">Contains nuts</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <p class="range-note">What&rsquo;s in the cabinet varies from day to day. If you&rsquo;re after something in particular, call us on <a href="tel:+61478774466">0478 774 466</a> before you come in.</p>
+  </div>
+</section>
+<section class="cta on-mist">
+  <div class="wrap cta-row">
+    <div>
+      <h2>Planning a celebration?</h2>
+      <p>Tell us what you have in mind and we&rsquo;ll confirm the details and price.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-black" href="/order">Order a cake</a>
+      <a class="btn btn-outline" href="tel:+61478774466">Call 0478 774 466</a>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/range-tabs.ts"></script>
+</Layout>

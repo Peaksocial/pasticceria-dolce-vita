@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { META } from '../data/meta';
+---
+<Layout route="order" title={META['order'].title} description={META['order'].description}>
+<div class="page-head">
+  <div class="wrap">
+    <h1 tabindex="-1">Order a cake</h1>
+    <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <p class="lede">Custom cakes, cannoli and pastries, made to order for your occasion.</p>
+  </div>
+</div>
+<section class="band on-white">
+  <div class="wrap order-grid">
+    <div class="order-side">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span>Tell us what you&rsquo;d like and when you need it.</span></li>
+        <li><span>We&rsquo;ll call or email to confirm the details and price.</span></li>
+        <li><span>Pick up at Carnes Hill Marketplace, or have it delivered.</span></li>
+      </ol>
+      <p class="order-call">Prefer to talk it through? Call <a href="tel:+61478774466">0478 774 466</a>.</p>
+    </div>
+
+    <div class="form-card">
+      <div class="tricolore" aria-hidden="true"></div>
+      <div class="form-body">
+        <form id="order-form" novalidate>
+          <div class="form-alert" id="form-alert" role="alert" hidden></div>
+
+          <fieldset>
+            <legend>Your order</legend>
+            <div class="fields">
+              <div class="field wide">
+                <label for="f-type">What would you like?</label>
+                <select id="f-type" name="type" required aria-describedby="e-type">
+                  <option value="">Choose one</option>
+                  <option>Custom celebration cake</option>
+                  <option>Continental cake</option>
+                  <option>Gelato cake</option>
+                  <option>Large cake from our range</option>
+                  <option>Cannoli</option>
+                  <option>Pastries and small cakes</option>
+                  <option>Something else</option>
+                </select>
+                <p class="err" id="e-type"></p>
+              </div>
+              <div class="field">
+                <label for="f-occasion">Occasion<span class="opt">optional</span></label>
+                <input type="text" id="f-occasion" name="occasion" autocomplete="off" placeholder="Birthday, Christmas">
+              </div>
+              <div class="field">
+                <label for="f-serves">Number of people<span class="opt">optional</span></label>
+                <input type="number" id="f-serves" name="serves" min="1" max="1000" inputmode="numeric">
+              </div>
+              <div class="field wide">
+                <label for="f-details">Order details and special requests</label>
+                <textarea id="f-details" name="details" required aria-describedby="h-details e-details"></textarea>
+                <p class="hint" id="h-details">Flavours, fillings, colours, a message for the cake, allergies. Anything we should know.</p>
+                <p class="err" id="e-details"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>When and how</legend>
+            <div class="fields">
+              <div class="field">
+                <label for="f-date">Preferred date</label>
+                <input type="date" id="f-date" name="date" required aria-describedby="e-date">
+                <p class="err" id="e-date"></p>
+              </div>
+              <div class="field">
+                <label for="f-time">Preferred time</label>
+                <input type="time" id="f-time" name="time" required aria-describedby="e-time">
+                <p class="err" id="e-time"></p>
+              </div>
+              <div class="field wide" role="radiogroup" aria-labelledby="l-method">
+                <span class="label" id="l-method">Pickup or delivery</span>
+                <div class="choice">
+                  <label><input type="radio" name="method" value="Pickup" checked>Pickup<span>Carnes Hill Marketplace</span></label>
+                  <label><input type="radio" name="method" value="Delivery">Delivery<span>South West Sydney and across NSW</span></label>
+                </div>
+              </div>
+              <div class="address" id="address" hidden>
+                <div class="field wide">
+                  <label for="f-street">Delivery address</label>
+                  <input type="text" id="f-street" name="street" autocomplete="street-address" aria-describedby="e-street">
+                  <p class="err" id="e-street"></p>
+                </div>
+                <div class="field">
+                  <label for="f-suburb">Suburb</label>
+                  <input type="text" id="f-suburb" name="suburb" autocomplete="address-level2" aria-describedby="e-suburb">
+                  <p class="err" id="e-suburb"></p>
+                </div>
+                <div class="field">
+                  <label for="f-postcode">Postcode</label>
+                  <input type="text" id="f-postcode" name="postcode" inputmode="numeric" maxlength="4" autocomplete="postal-code" aria-describedby="e-postcode">
+                  <p class="err" id="e-postcode"></p>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your details</legend>
+            <div class="fields">
+              <div class="field wide">
+                <label for="f-name">Full name</label>
+                <input type="text" id="f-name" name="name" required autocomplete="name" aria-describedby="e-name">
+                <p class="err" id="e-name"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input type="tel" id="f-phone" name="phone" required autocomplete="tel" aria-describedby="e-phone">
+                <p class="err" id="e-phone"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" required autocomplete="email" aria-describedby="e-email">
+                <p class="err" id="e-email"></p>
+              </div>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input type="text" id="f-company" name="company" tabindex="-1" autocomplete="off"></div>
+          </fieldset>
+
+          <div class="form-foot">
+            <button class="btn btn-black" type="submit" id="send-btn">Send order request</button>
+            <p>This is a request, not a confirmed order. We&rsquo;ll be in touch to confirm the details and price.</p>
+          </div>
+        </form>
+
+        <div class="done" id="order-done" tabindex="-1" hidden>
+          <h3>Order request sent</h3>
+          <p id="done-msg"></p>
+          <dl class="summary" id="done-summary"></dl>
+          <p class="preview-note" id="preview-note" hidden>Preview only: this form isn&rsquo;t connected yet, so nothing was sent.</p>
+          <button class="btn btn-outline" type="button" id="again-btn">Send another request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/order-form.ts"></script>
+</Layout>

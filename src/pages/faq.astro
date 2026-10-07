@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { META } from '../data/meta';
+
+// Questions and answers. These render the list below and the FAQPage JSON-LD, so the two always match.
+const faqs = [
+  {
+    q: 'Do you make custom cakes?',
+    a: 'Yes. We make cakes to order for all occasions, from birthdays and family celebrations to Father’s Day and Christmas. Send us an order request with your date, how many people it’s for and any ideas you have, and we’ll confirm the details and price with you.',
+  },
+  {
+    q: 'How far ahead should I order?',
+    a: 'As early as you can, especially for a custom design or a busy time of year. Add your preferred date to your order request and we’ll let you know if we can make it.',
+  },
+  {
+    q: 'Do you deliver?',
+    a: 'Yes. We’re based in South West Sydney and can deliver all around NSW. Choose delivery on the order form and we’ll confirm the delivery details for your address.',
+  },
+  {
+    q: 'Can I pick up my order?',
+    a: 'Yes. Pick up from our shop at Carnes Hill Marketplace, on the corner of Cowpasture Road and Kurrajong Road in Carnes Hill.',
+  },
+  {
+    q: 'Can I order through Uber Eats?',
+    a: 'Yes. Pasticceria Dolce Vita is on Uber Eats in Sydney. Enter your address in the Uber Eats app or website to see if delivery is available where you are.',
+  },
+  {
+    q: 'What are continental and gelato cakes?',
+    a: 'A continental cake is a traditional Italian sponge cake, filled with vanilla and chocolate custard and soaked in liqueur. A gelato cake is made with gelato and served frozen. Both are our specialty.',
+  },
+  {
+    q: 'Do any of your cakes contain alcohol?',
+    a: 'Some do. Our continental cake and our peaches are soaked in liqueur. If you need a cake without alcohol, tell us in your order request.',
+  },
+  {
+    q: 'Do your products contain nuts or other allergens?',
+    a: 'Some of our products contain nuts, including anything made with pistachio, hazelnut or Nutella, and most contain gluten, dairy and egg. Tell us about any allergies in your order request, or ask in store before you buy.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout route="faq" title={META['faq'].title} description={META['faq'].description}>
+<script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema, null, 2)}></script>
+<div class="page-head">
+  <div class="wrap">
+    <h1 tabindex="-1">Frequently asked questions</h1>
+    <svg class="swoosh" viewBox="0 0 148 14" aria-hidden="true"><path d="M2 10C34 3 66 2 92 6s38 6 54-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <p class="lede">Custom cakes, ordering, pickup, delivery and allergens.</p>
+  </div>
+</div>
+<section class="band on-white">
+  <div class="wrap">
+    <div class="faq">
+      {faqs.map((f, i) => (
+        <details open={i === 0}><summary>{f.q}</summary><p>{f.a}</p></details>
+      ))}
+    </div>
+    <p class="faq-more">Can&rsquo;t find your answer? Call us on <a href="tel:+61478774466">0478 774 466</a>.</p>
+  </div>
+</section>
+<section class="cta on-mist">
+  <div class="wrap cta-row">
+    <div>
+      <h2>Planning a celebration?</h2>
+      <p>Tell us what you have in mind and we&rsquo;ll confirm the details and price.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-black" href="/order">Order a cake</a>
+      <a class="btn btn-outline" href="tel:+61478774466">Call 0478 774 466</a>
+    </div>
+  </div>
+</section>
+</Layout>
