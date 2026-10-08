@@ -409,10 +409,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .foot-nav a{text-decoration:none;padding:10px 0;color:#E4E4E2}
 .foot-nav a:hover{color:var(--gold)}
 .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-block:20px 26px;border-top:1px solid var(--line-dark);font-size:.94rem;color:var(--smoke)}
-/* "Powered by Peak Social" tag: white-text variant for dark footers */
-.powered{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;transition:color .18s}
-.powered:hover{color:#9dd2eb}
-.powered img{height:18px;width:auto}
 
 @media (prefers-reduced-motion:reduce){
   .reel-track{animation:none}
