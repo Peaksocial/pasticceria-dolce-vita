@@ -294,8 +294,10 @@ h1:focus,main:focus{outline:none}
 .steps{margin-top:26px;counter-reset:step}
 .steps li{counter-increment:step;display:grid;grid-template-columns:44px 1fr;gap:6px;padding:16px 0;border-top:1px solid var(--line)}
 .steps li::before{content:counter(step);font-family:var(--display);font-size:1.7rem;line-height:1;color:var(--gold-deep)}
-.order-call{margin-top:30px;color:var(--stone)}
-.order-call a{color:#000;font-weight:500;white-space:nowrap}
+.order-custom{margin-top:30px;padding:20px 22px;background:var(--mist)}
+.order-custom h3{font-size:1.3rem}
+.order-custom p{margin-top:8px;color:var(--stone)}
+.order-custom a{color:#000;font-weight:500;white-space:nowrap}
 .form-card{border:1px solid #000;background:var(--white);scroll-margin-top:20px}
 .form-body{padding:clamp(22px,4vw,44px)}
 .form-body fieldset + fieldset{margin-top:38px;padding-top:34px;border-top:1px solid var(--line)}
@@ -333,8 +335,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .choice label:has(input:checked){border-color:#000;box-shadow:inset 0 0 0 1px #000}
 .choice label:has(input:checked)::before{background:radial-gradient(circle,#000 0 5px,#fff 5.5px)}
 .choice label:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
-.address{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.address[hidden]{display:none}
+.pickup-note{grid-column:1 / -1;color:var(--stone)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-foot{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 24px}
 .form-foot .btn{min-height:54px;padding:0 34px}
@@ -354,7 +355,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .order-side{position:static}
 }
 @media (max-width:560px){
-  .fields,.address,.choice{grid-template-columns:1fr}
+  .fields,.choice{grid-template-columns:1fr}
   .summary div{grid-template-columns:1fr;gap:2px}
 }
 

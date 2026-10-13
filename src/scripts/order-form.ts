@@ -7,17 +7,12 @@ const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: 
 function $<T extends HTMLElement = HTMLElement>(s: string) { return doc.querySelector<T>(s)!; }
 
 const form = $<HTMLFormElement>('#order-form'), done = $('#order-done'), alertBox = $('#form-alert'), sendBtn = $<HTMLButtonElement>('#send-btn');
-const address = $('#address'), dateEl = $<HTMLInputElement>('#f-date');
+const dateEl = $<HTMLInputElement>('#f-date');
 
 function pad(n: number) { return (n < 10 ? '0' : '') + n; }
 function iso(d: Date) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
 const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1);
 dateEl.min = iso(tomorrow);
-
-function method() { return (form.elements.namedItem('method') as RadioNodeList).value; }
-function syncMethod() { address.hidden = method() !== 'Delivery'; }
-form.querySelectorAll('input[name="method"]').forEach(function (r) { r.addEventListener('change', syncMethod); });
-syncMethod();
 
 function field(id: string) { return doc.getElementById('f-' + id) as HTMLInputElement; }
 function setErr(id: string, msg: string) {
@@ -29,16 +24,12 @@ function setErr(id: string, msg: string) {
 function val(id: string) { return field(id).value.trim(); }
 
 const checks: Record<string, () => string> = {
-  type:    function () { return val('type') ? '' : 'Choose what you’d like to order.'; },
-  details: function () { return val('details') ? '' : 'Tell us a little about what you’d like.'; },
+  type:    function () { return val('type') ? '' : 'Choose a cake.'; },
   date:    function () {
     if (!val('date')) return 'Choose a date.';
     return val('date') < dateEl.min ? 'Choose a date from tomorrow onwards.' : '';
   },
   time:    function () { return val('time') ? '' : 'Choose a time.'; },
-  street:  function () { return method() !== 'Delivery' || val('street') ? '' : 'Enter the delivery address.'; },
-  suburb:  function () { return method() !== 'Delivery' || val('suburb') ? '' : 'Enter the suburb.'; },
-  postcode:function () { return method() !== 'Delivery' || /^\d{4}$/.test(val('postcode')) ? '' : 'Enter a 4-digit postcode.'; },
   name:    function () { return val('name') ? '' : 'Enter your name.'; },
   phone:   function () { return val('phone').replace(/\D/g, '').length >= 8 ? '' : 'Enter a phone number so we can confirm your order.'; },
   email:   function () { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email')) ? '' : 'Enter an email address, like name@example.com.'; }
@@ -61,11 +52,10 @@ function niceTime(s: string) {
 function showDone(data: Record<string, string>) {
   $('#done-msg').textContent = 'Thanks, ' + data.name.split(' ')[0] + '. We’ll call or email to confirm the details and price.';
   const rows = [
-    ['Order', data.type + (data.occasion ? ' (' + data.occasion + ')' : '')],
+    ['Cake', data.type + (data.occasion ? ' (' + data.occasion + ')' : '')],
     ['For', data.serves ? data.serves + ' people' : ''],
-    ['When', niceDate(data.date) + ' at ' + niceTime(data.time)],
-    [data.method, data.method === 'Delivery' ? data.street + ', ' + data.suburb + ' ' + data.postcode : 'Carnes Hill Marketplace'],
-    ['Details', data.details],
+    ['Pickup', niceDate(data.date) + ' at ' + niceTime(data.time) + '\nCarnes Hill Marketplace'],
+    ['Notes', data.details],
     ['Contact', data.phone + '\n' + data.email]
   ];
   const dl = $('#done-summary'); dl.textContent = '';
@@ -92,9 +82,7 @@ form.addEventListener('submit', function (e) {
   if (val('company')) return; // spam trap
 
   const data: Record<string, string> = {};
-  ['type', 'occasion', 'serves', 'details', 'date', 'time', 'street', 'suburb', 'postcode', 'name', 'phone', 'email'].forEach(function (k) { data[k] = val(k); });
-  data.method = method();
-  if (data.method !== 'Delivery') { data.street = data.suburb = data.postcode = ''; }
+  ['type', 'occasion', 'serves', 'details', 'date', 'time', 'name', 'phone', 'email'].forEach(function (k) { data[k] = val(k); });
 
   if (!FORM_ENDPOINT) { showDone(data); return; }
 
@@ -110,7 +98,7 @@ form.addEventListener('submit', function (e) {
 });
 
 $('#again-btn').addEventListener('click', function () {
-  form.reset(); syncMethod();
+  form.reset();
   done.hidden = true; form.hidden = false;
   $('#f-type').focus();
 });

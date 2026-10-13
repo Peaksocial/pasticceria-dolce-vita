@@ -2,7 +2,7 @@
 export const META = {
   'home': {
     title: 'Pasticceria Dolce Vita | Italian Cake Shop in Carnes Hill, South West Sydney',
-    description: 'Italian cake shop in Carnes Hill with 35 years’ experience. Continental and gelato cakes, cannoli and custom cakes to order. Pickup or delivery across NSW.',
+    description: 'Italian cake shop in Carnes Hill with 35 years’ experience. Continental and gelato cakes, cannoli and pastries. Order a cake online for pickup.',
   },
   'about': {
     title: 'About Us | Pasticceria Dolce Vita, Italian Cake Shop in Carnes Hill',
@@ -13,15 +13,15 @@ export const META = {
     description: 'Continental cake, tiramisu, baked ricotta, cannoli, sfogliatelle, vanilla slice, pies and more from our cabinet at Carnes Hill Marketplace in South West Sydney.',
   },
   'faq': {
-    title: 'FAQ: Custom Cakes, Pickup and Delivery | Pasticceria Dolce Vita',
-    description: 'Answers about custom cake orders, how far ahead to order, pickup at Carnes Hill, delivery across South West Sydney and NSW, and allergens.',
+    title: 'FAQ: Ordering, Pickup and Custom Cakes | Pasticceria Dolce Vita',
+    description: 'Answers about ordering a cake online, custom cake enquiries, how far ahead to order, pickup at Carnes Hill Marketplace, and allergens.',
   },
   'contact': {
     title: 'Contact Us | Pasticceria Dolce Vita, Carnes Hill NSW',
     description: 'Visit Pasticceria Dolce Vita at Carnes Hill Marketplace, corner of Cowpasture Rd and Kurrajong Rd, Carnes Hill NSW 2171, or call 0478 774 466.',
   },
   'order': {
-    title: 'Order a Custom Cake in South West Sydney | Pasticceria Dolce Vita',
-    description: 'Order a custom cake, continental cake, gelato cake, cannoli or pastries. Choose your date, then pickup at Carnes Hill or delivery across NSW.',
+    title: 'Order a Cake Online for Pickup in Carnes Hill | Pasticceria Dolce Vita',
+    description: 'Order a cake from our range online and pick it up at Carnes Hill Marketplace. For custom cakes, call 0478 774 466 or come in store.',
   },
 } as const;
