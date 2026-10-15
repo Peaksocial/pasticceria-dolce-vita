@@ -2,11 +2,11 @@
 export const META = {
   'home': {
     title: 'Pasticceria Dolce Vita | Italian Cake Shop in Carnes Hill, South West Sydney',
-    description: 'Italian cake shop in Carnes Hill with 35 years’ experience. Continental and gelato cakes, cannoli and pastries. Order a cake online for pickup.',
+    description: 'Italian cake shop in Carnes Hill Marketplace with 40 years’ experience. Continental and gelato cakes, cannoli and pastries. Order a cake online for pickup.',
   },
   'about': {
     title: 'About Us | Pasticceria Dolce Vita, Italian Cake Shop in Carnes Hill',
-    description: 'Pasticceria Dolce Vita is an Italian cake shop at Carnes Hill Marketplace with 35 years’ experience in continental cakes, gelato cakes and Italian pastries.',
+    description: 'Pasticceria Dolce Vita is an Italian cake shop at Carnes Hill Marketplace with 40 years’ experience in continental cakes, gelato cakes and Italian pastries.',
   },
   'our-range': {
     title: 'Our Range: Italian Cakes, Cannoli and Pastries | Pasticceria Dolce Vita',

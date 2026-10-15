@@ -214,6 +214,9 @@ h1:focus,main:focus{outline:none}
 .about-photo img{width:100%;box-shadow:16px 16px 0 -1.5px var(--white),16px 16px 0 0 var(--gold)}
 .about-photo figcaption{margin-top:30px;font-size:.95rem;color:var(--stone)}
 .about-copy .actions{margin-top:34px}
+.promise{margin-top:34px;max-width:34em;padding-left:24px;border-left:2px solid var(--gold)}
+.about-copy .promise p{margin-top:0;font-family:var(--display);font-size:clamp(1.25rem,2.2vw,1.55rem);line-height:1.3;color:var(--ink)}
+.promise figcaption{margin-top:12px;font-size:.95rem;color:var(--gold-deep);font-weight:500}
 .about-grid--top{align-items:start}
 .about-photos{justify-self:end;width:100%;max-width:540px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;padding-right:16px}
