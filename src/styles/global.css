@@ -208,6 +208,8 @@ h1:focus,main:focus{outline:none}
 .about-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,6vw,88px);align-items:center}
 .about-copy p{margin-top:20px;max-width:34em}
 .about-copy .lede{margin-top:26px;color:var(--ink)}
+.about-copy h3{margin-top:40px}
+.about-copy h3+p{margin-top:12px}
 .specialties{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;column-gap:32px;max-width:34em}
 .specialties li{padding:12px 0;border-top:1px solid var(--line);font-weight:500}
 .about-photo{justify-self:end;width:100%;max-width:540px;padding:0 16px 16px 0}
