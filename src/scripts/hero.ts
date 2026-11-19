@@ -1,5 +1,5 @@
 /* ---------- Settings ---------- */
-const HERO_VIDEO_SRC = '';   // Path to the homepage banner video, e.g. '/media/hero.mp4'. Leave empty to show the photo reel.
+const HERO_VIDEO_SRC = '/media/hero.mp4';   // Path to the homepage banner video, e.g. '/media/hero.mp4'. Leave empty to show the photo reel.
 
 /* ---------- Hero video ---------- */
 const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

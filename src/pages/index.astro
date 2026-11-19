@@ -6,9 +6,9 @@ import { META } from '../data/meta';
   ogDescription="Continental and gelato cakes, cannoli and pastries. Order a cake online for pickup at Carnes Hill Marketplace.">
 <section class="hero">
   <div class="hero-media" aria-hidden="true">
-    <!-- Photo reel: stands in for the video banner until a video file is added (see HERO_VIDEO_SRC in the script) -->
+    <!-- Photo reel: fallback if HERO_VIDEO_SRC in the script is emptied -->
     <div class="reel"><div class="reel-track"><span style="background-image:var(--reel-1)"></span><span style="background-image:var(--reel-2)"></span><span style="background-image:var(--reel-3)"></span><span style="background-image:var(--reel-4)"></span><span style="background-image:var(--reel-1)"></span><span style="background-image:var(--reel-2)"></span><span style="background-image:var(--reel-3)"></span><span style="background-image:var(--reel-4)"></span><span style="background-image:var(--reel-1)"></span><span style="background-image:var(--reel-2)"></span><span style="background-image:var(--reel-3)"></span><span style="background-image:var(--reel-4)"></span></div></div>
-    <video class="hero-video" muted loop playsinline preload="metadata" hidden></video>
+    <video class="hero-video" muted loop playsinline preload="metadata" poster="/media/hero-poster.jpg" hidden></video>
   </div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="wrap hero-copy">
